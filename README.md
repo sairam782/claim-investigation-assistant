@@ -1,5 +1,7 @@
 # AI Claim Investigation Assistant
 
+**Live Demo:** [https://claim-investigation-assistant.vercel.app](https://claim-investigation-assistant.vercel.app)
+
 A browser-based proof of concept for a human-in-the-loop healthcare claim investigation workflow.
 
 The app simulates how an AI assistant could help payment integrity reviewers triage submitted claims by checking claim details, clinical notes, lab and vital evidence, payer policy criteria, prior-claim history, billing anomalies, and documentation completeness.
