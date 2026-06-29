@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>AI Claim Investigation Assistant</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="hero">
+        <div>
+          <h1>AI Claim Investigation Assistant</h1>
+          <p class="lede">
+            A human-in-the-loop payment integrity demonstrator that routes a submitted
+            claim through seven investigation agents and produces a reviewer-ready report.
+          </p>
+        </div>
+        <div class="hero-metrics" aria-label="Demo metrics">
+          <div>
+            <span id="scoreMetric">--</span>
+            <small>confidence</small>
+          </div>
+          <div>
+            <span id="riskMetric">--</span>
+            <small>flags</small>
+          </div>
+          <div>
+            <span id="agentMetric">7</span>
+            <small>agents</small>
+          </div>
+        </div>
+      </section>
+
+      <section class="workspace">
+        <aside class="input-panel" aria-label="Claim input panel">
+          <div class="panel-header">
+            <div>
+              <p class="eyebrow">Claim submitted</p>
+              <h2>Case File</h2>
+            </div>
+            <button id="runButton" class="primary-button" type="button">Run Investigation</button>
+          </div>
+
+          <label for="scenarioSelect">Demo scenario</label>
+          <select id="scenarioSelect"></select>
+
+          <div class="field-grid">
+            <label>
+              Claim ID
+              <input id="claimId" type="text" />
+            </label>
+            <label>
+              Procedure Code
+              <input id="procedureCode" type="text" />
+            </label>
+            <label>
+              Diagnosis Code
+              <input id="diagnosisCode" type="text" />
+            </label>
+            <label>
+              Billed Amount
+              <input id="billedAmount" type="text" />
+            </label>
+            <label>
+              Provider
+              <input id="provider" type="text" />
+            </label>
+            <label>
+              Date of Service
+              <input id="dateOfService" type="date" />
+            </label>
+          </div>
+
+          <label for="clinicalNotes">Clinical notes</label>
+          <textarea id="clinicalNotes" rows="8"></textarea>
+
+          <label for="labs">Labs and vitals</label>
+          <textarea id="labs" rows="5"></textarea>
+
+          <label for="policy">Insurance policy criteria</label>
+          <textarea id="policy" rows="7"></textarea>
+
+          <label for="history">Patient history and prior claims</label>
+          <textarea id="history" rows="5"></textarea>
+        </aside>
+
+        <section class="results-panel" aria-label="Investigation results">
+          <div class="panel-header">
+            <div>
+              <p class="eyebrow">AI investigation</p>
+              <h2>Agent Workflow</h2>
+            </div>
+            <button id="copyButton" class="secondary-button" type="button">Copy Report</button>
+          </div>
+
+          <ol id="agentTimeline" class="agent-timeline"></ol>
+
+          <section class="reviewer-report" aria-label="Reviewer report">
+            <div class="report-topline">
+              <div>
+                <p class="eyebrow">Human reviewer</p>
+                <h2>Structured Reviewer Report</h2>
+              </div>
+              <div id="recommendationBadge" class="badge neutral">Not run</div>
+            </div>
+
+            <div class="score-row">
+              <div class="score-ring" aria-label="Confidence score">
+                <span id="scoreValue">--</span>
+                <small>/100</small>
+              </div>
+              <div>
+                <h3 id="reportTitle">Run the investigation to generate findings.</h3>
+                <p id="reportSummary">
+                  The assistant will parse claim details, retrieve patient context, check
+                  clinical validity, evaluate documentation, and produce a reviewer handoff.
+                </p>
+              </div>
+            </div>
+
+            <div class="report-grid">
+              <div>
+                <h3>Failure Points</h3>
+                <ul id="failureList"></ul>
+              </div>
+              <div>
+                <h3>Supporting Evidence</h3>
+                <ul id="evidenceList"></ul>
+              </div>
+            </div>
+
+            <h3>Reviewer Handoff</h3>
+            <pre id="reportText"></pre>
+          </section>
+        </section>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
