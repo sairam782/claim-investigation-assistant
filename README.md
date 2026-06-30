@@ -1,6 +1,7 @@
 # AI Claim Investigation Assistant
 
 **Live Demo:** [https://claim-investigation-assistant.vercel.app](https://claim-investigation-assistant.vercel.app)
+
 **Video:** [https://drive.google.com/file/d/1ff8J2E2Mb0IKikf9L_vw-8w7B9OLKKH6/view](https://drive.google.com/file/d/1ff8J2E2Mb0IKikf9L_vw-8w7B9OLKKH6/view)
 
 A browser-based proof of concept for a human-in-the-loop healthcare claim investigation workflow.
